@@ -1,0 +1,11 @@
+torch>=1.13
+torchvision
+opencv-python
+numpy
+flask
+Pillow
+scikit-image
+matplotlib
+tqdm
+scipy
+onnxruntime
