@@ -1,0 +1,156 @@
+.app {
+  background: #ffffff;
+  border-radius: 0;
+  box-shadow: none;
+  overflow: hidden;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.app-header {
+  background: linear-gradient(135deg, #1e3a5f 0%, #2c5282 100%);
+  color: white;
+  padding: 30px 20px;
+  text-align: center;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.app-header h1 {
+  font-size: 2rem;
+  margin-bottom: 8px;
+  font-weight: 600;
+  letter-spacing: -0.5px;
+}
+
+.subtitle {
+  font-size: 1rem;
+  opacity: 0.95;
+  margin-bottom: 6px;
+  font-weight: 400;
+}
+
+.description {
+  font-size: 0.875rem;
+  opacity: 0.85;
+  margin-top: 8px;
+}
+
+.app-main {
+  padding: 20px;
+  flex: 1;
+  background: #f5f7fa;
+}
+
+.tab-container {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 20px;
+  background: white;
+  padding: 6px;
+  border-radius: 10px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.tab-button {
+  flex: 1;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 8px;
+  background: transparent;
+  color: #64748b;
+  font-size: 0.95rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.tab-button:hover {
+  background: #f1f5f9;
+  color: #334155;
+}
+
+.tab-button.active {
+  background: #1e3a5f;
+  color: white;
+  box-shadow: 0 2px 4px rgba(30, 58, 95, 0.2);
+}
+
+.camera-section {
+  margin-bottom: 20px;
+}
+
+.upload-section {
+  margin-bottom: 30px;
+}
+
+.results-section {
+  margin-top: 30px;
+  animation: fadeIn 0.5s ease-in;
+}
+
+.error-message {
+  background: #fef2f2;
+  color: #dc2626;
+  padding: 12px 16px;
+  border-radius: 8px;
+  margin: 15px 0;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  border-left: 3px solid #dc2626;
+  font-size: 0.9rem;
+}
+
+.low-confidence-warning {
+  background: #fff7ed;
+  color: #c2410c;
+  padding: 12px 16px;
+  border-radius: 8px;
+  margin-bottom: 15px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  border-left: 3px solid #f59e0b;
+  font-size: 0.9rem;
+  animation: fadeIn 0.3s ease-in;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 768px) {
+  .app-header {
+    padding: 24px 16px;
+  }
+
+  .app-header h1 {
+    font-size: 1.75rem;
+  }
+
+  .subtitle {
+    font-size: 0.95rem;
+  }
+
+  .description {
+    font-size: 0.8rem;
+  }
+
+  .app-main {
+    padding: 16px;
+  }
+
+  .tab-button {
+    padding: 10px 16px;
+    font-size: 0.9rem;
+  }
+}
+

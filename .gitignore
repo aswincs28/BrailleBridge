@@ -1,0 +1,309 @@
+# ============================================
+# Braille Recognition System - .gitignore
+# ============================================
+
+# ===== Python / Backend =====
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# C extensions
+*.so
+
+# Distribution / packaging
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+pip-wheel-metadata/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# PyInstaller
+*.manifest
+*.spec
+
+# Unit test / coverage reports
+htmlcov/
+.tox/
+.nox/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+*.py,cover
+.hypothesis/
+.pytest_cache/
+
+# Virtual environments
+venv/
+env/
+ENV/
+env.bak/
+venv.bak/
+.venv
+
+# Jupyter Notebook
+.ipynb_checkpoints
+*.ipynb_checkpoints
+
+# IPython
+profile_default/
+ipython_config.py
+
+# pyenv
+.python-version
+
+# ===== Machine Learning Models / Large Artifacts =====
+# Model files (too large for git)
+*.keras
+*.h5
+*.hdf5
+*.pb
+*.pkl
+*.pickle
+*.joblib
+*.pt
+*.pth
+*.onnx
+*.tflite
+*.ckpt
+*.weights
+*.model
+
+# Model checkpoints and large training artifacts
+checkpoints/
+checkpoints_ctc/
+models/
+saved_models/
+weights/
+*.ckpt.*
+*.index
+*.data-?????-of-?????
+
+# ===== API Keys & Secrets =====
+# Environment variables
+.env
+.env.local
+.env.*.local
+*.env
+secrets.env
+
+# API keys in code (if accidentally committed)
+*api_key*
+*apikey*
+*secret*
+*password*
+*credentials*
+
+# Configuration files with secrets
+config.ini
+config.yaml
+config.yml
+secrets.json
+credentials.json
+
+# ===== Node.js / Frontend =====
+# Dependencies
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+lerna-debug.log*
+.pnpm-debug.log*
+
+# Build outputs
+dist/
+dist-ssr/
+*.local
+build/
+out/
+
+# Vite
+.vite/
+vite.config.js.timestamp-*
+
+# Editor directories and files
+.vscode/*
+!.vscode/extensions.json
+.idea
+.DS_Store
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# ===== IDE / Editor =====
+# Visual Studio Code
+.vscode/
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+*.code-workspace
+
+# IntelliJ IDEA / PyCharm
+.idea/
+*.iml
+*.iws
+*.ipr
+
+# Sublime Text
+*.sublime-project
+*.sublime-workspace
+
+# Vim
+*.swp
+*.swo
+*~
+.vim/
+
+# Emacs
+*~
+\#*\#
+.\#*
+
+# ===== OS Files =====
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+Icon
+._*
+.Spotlight-V100
+.Trashes
+
+# Windows
+Thumbs.db
+Thumbs.db:encryptable
+ehthumbs.db
+ehthumbs_vista.db
+*.stackdump
+[Dd]esktop.ini
+$RECYCLE.BIN/
+*.cab
+*.msi
+*.msix
+*.msm
+*.msp
+*.lnk
+
+# Linux
+*~
+.fuse_hidden*
+.directory
+.Trash-*
+.nfs*
+
+# ===== Logs =====
+# Log files
+*.log
+logs/
+*.log.*
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+lerna-debug.log*
+.pnpm-debug.log*
+
+# ===== Temporary Files =====
+# Temporary files
+*.tmp
+*.temp
+*.bak
+*.backup
+*.swp
+*.swo
+*~
+.cache/
+
+# ===== Database =====
+# Database files
+*.db
+*.sqlite
+*.sqlite3
+*.db-journal
+
+# ===== Testing =====
+# Test coverage
+.coverage
+htmlcov/
+.pytest_cache/
+.tox/
+.hypothesis/
+
+# ===== Documentation =====
+# Generated documentation
+docs/_build/
+site/
+
+# ===== Other =====
+# Archive files
+*.zip
+*.tar
+*.tar.gz
+*.rar
+*.7z
+
+# Large data files
+*.csv
+*.tsv
+*.json
+!package.json
+!package-lock.json
+!tsconfig.json
+!vite.config.js
+
+# Image files (if too large)
+# Uncomment if you don't want to track images
+# *.jpg
+# *.jpeg
+# *.png
+# *.gif
+# *.bmp
+# *.tiff
+
+# ===== Project Specific =====
+# Backend specific
+backend/__pycache__/
+backend/*.pyc
+backend/.pytest_cache/
+backend/.coverage
+
+# Frontend specific
+frontend/node_modules/
+frontend/dist/
+frontend/.vite/
+frontend/build/
+
+# Keep important files
+!backend/charset.txt
+!backend/requirements.txt
+!backend/README.md
+!frontend/package.json
+!frontend/package-lock.json
+!frontend/vite.config.js
+
+# But ignore model files
+backend/*.keras
+backend/*.h5
+backend/*.hdf5
+backend/models/
+backend/checkpoints/
+

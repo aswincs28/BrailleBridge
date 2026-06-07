@@ -1,0 +1,51 @@
+.voice-guidance-controls {
+  display: flex;
+  justify-content: center;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+.voice-toggle {
+  padding: 10px 20px;
+  border: 2px solid #4a90e2;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  background: #2a2a2a;
+  color: #e0e0e0;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.voice-toggle.enabled {
+  background: #4a90e2;
+  color: white;
+  border-color: #357abd;
+}
+
+.voice-toggle.enabled:hover {
+  background: #357abd;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(74, 144, 226, 0.4);
+}
+
+.voice-toggle.disabled {
+  background: #2a2a2a;
+  color: #b0b0b0;
+  border-color: #555;
+}
+
+.voice-toggle.disabled:hover {
+  background: #333;
+  border-color: #666;
+  transform: translateY(-2px);
+}
+
+@media (max-width: 768px) {
+  .voice-toggle {
+    padding: 8px 16px;
+    font-size: 0.85rem;
+  }
+}
+

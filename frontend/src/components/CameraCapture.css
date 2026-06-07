@@ -1,0 +1,371 @@
+.camera-capture {
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.camera-container {
+  width: 100%;
+  background: #1a1a1a;
+  border-radius: 12px;
+  overflow: hidden;
+  position: relative;
+}
+
+.camera-placeholder {
+  padding: 60px 20px;
+  text-align: center;
+  background: #2a2a2a;
+  color: #e0e0e0;
+  min-height: 300px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.camera-icon {
+  font-size: 4rem;
+  margin-bottom: 20px;
+  opacity: 0.7;
+}
+
+.camera-placeholder p {
+  margin-bottom: 20px;
+  color: #b0b0b0;
+  font-size: 1rem;
+}
+
+.video-wrapper {
+  position: relative;
+  width: 100%;
+  background: #000;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  min-height: 300px;
+}
+
+.camera-video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  background: #000;
+  transform: scaleX(1);
+}
+
+.detection-box {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 60%;
+  height: 50%;
+  pointer-events: none;
+  z-index: 2;
+}
+
+.detection-box-border {
+  width: 100%;
+  height: 100%;
+  border: 3px solid #4a90e2;
+  border-radius: 8px;
+  box-shadow: 
+    0 0 0 2px rgba(0, 0, 0, 0.5),
+    0 0 20px rgba(74, 144, 226, 0.3),
+    inset 0 0 20px rgba(74, 144, 226, 0.1);
+  animation: pulse-border 2s ease-in-out infinite;
+}
+
+@keyframes pulse-border {
+  0%, 100% {
+    border-color: #4a90e2;
+    box-shadow: 
+      0 0 0 2px rgba(0, 0, 0, 0.5),
+      0 0 20px rgba(74, 144, 226, 0.3),
+      inset 0 0 20px rgba(74, 144, 226, 0.1);
+  }
+  50% {
+    border-color: #6bb3ff;
+    box-shadow: 
+      0 0 0 2px rgba(0, 0, 0, 0.5),
+      0 0 30px rgba(107, 179, 255, 0.5),
+      inset 0 0 20px rgba(107, 179, 255, 0.2);
+  }
+}
+
+.detection-box-label {
+  position: absolute;
+  top: -30px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(74, 144, 226, 0.9);
+  color: white;
+  padding: 6px 12px;
+  border-radius: 6px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  white-space: nowrap;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+.detecting-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  z-index: 10;
+  pointer-events: none;
+}
+
+.detecting-spinner {
+  width: 50px;
+  height: 50px;
+  border: 4px solid rgba(255, 255, 255, 0.2);
+  border-top-color: #4a90e2;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin-bottom: 15px;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+.detecting-overlay p {
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.camera-controls {
+  display: flex;
+  gap: 12px;
+  padding: 20px;
+  background: #2a2a2a;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.camera-button {
+  padding: 12px 24px;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  min-width: 140px;
+}
+
+.start-button {
+  background: #4a90e2;
+  color: white;
+}
+
+.start-button:hover {
+  background: #357abd;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(74, 144, 226, 0.4);
+}
+
+.capture-button {
+  background: #28a745;
+  color: white;
+}
+
+.capture-button:hover:not(:disabled) {
+  background: #218838;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(40, 167, 69, 0.4);
+}
+
+.capture-button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.stop-button {
+  background: #dc3545;
+  color: white;
+}
+
+.stop-button:hover {
+  background: #c82333;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(220, 53, 69, 0.4);
+}
+
+.camera-error {
+  margin-top: 15px;
+  padding: 12px 16px;
+  background: #fef2f2;
+  color: #dc2626;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  border-left: 3px solid #dc2626;
+  font-size: 0.9rem;
+}
+
+.camera-instructions {
+  position: absolute;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 5;
+  max-width: 90%;
+  width: 500px;
+  animation: slideDown 0.3s ease-out;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateX(-50%) translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+  }
+}
+
+.instructions-content {
+  background: linear-gradient(135deg, rgba(74, 144, 226, 0.95), rgba(107, 179, 255, 0.95));
+  color: white;
+  padding: 16px 20px;
+  border-radius: 12px;
+  box-shadow: 
+    0 4px 20px rgba(0, 0, 0, 0.3),
+    0 0 0 1px rgba(255, 255, 255, 0.1);
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  position: relative;
+  backdrop-filter: blur(10px);
+}
+
+.instructions-icon {
+  font-size: 1.5rem;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.instructions-content p {
+  margin: 0;
+  flex: 1;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  font-weight: 500;
+}
+
+.instructions-close {
+  background: rgba(255, 255, 255, 0.2);
+  border: none;
+  color: white;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 1.2rem;
+  line-height: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: all 0.2s ease;
+  padding: 0;
+  margin-top: -2px;
+}
+
+.instructions-close:hover {
+  background: rgba(255, 255, 255, 0.3);
+  transform: scale(1.1);
+}
+
+.instructions-button {
+  background: #6c757d;
+  color: white;
+}
+
+.instructions-button:hover {
+  background: #5a6268;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(108, 117, 125, 0.4);
+}
+
+@media (max-width: 768px) {
+  .video-wrapper {
+    aspect-ratio: 4 / 3;
+  }
+
+  .detection-box {
+    width: 65%;
+    height: 55%;
+  }
+
+  .detection-box-label {
+    font-size: 0.75rem;
+    padding: 4px 10px;
+    top: -25px;
+  }
+
+  .camera-controls {
+    padding: 15px;
+  }
+
+  .camera-button {
+    flex: 1;
+    min-width: 120px;
+    font-size: 0.9rem;
+    padding: 10px 16px;
+  }
+
+  .camera-placeholder {
+    padding: 40px 20px;
+    min-height: 250px;
+  }
+
+  .camera-icon {
+    font-size: 3rem;
+  }
+
+  .camera-instructions {
+    max-width: 95%;
+    width: auto;
+    left: 50%;
+    top: 10px;
+  }
+
+  .instructions-content {
+    padding: 12px 16px;
+    font-size: 0.85rem;
+  }
+
+  .instructions-content p {
+    font-size: 0.85rem;
+  }
+
+  .instructions-icon {
+    font-size: 1.2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .video-wrapper {
+    aspect-ratio: 1 / 1;
+  }
+
+  .detection-box {
+    width: 70%;
+    height: 60%;
+  }
+}
